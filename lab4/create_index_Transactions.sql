@@ -1,0 +1,9 @@
+USE ApressFinancial
+GO
+
+CREATE NONCLUSTERED INDEX IX_Transactions_TType
+ON TransactionDetails.Transactions (TransactionTypeId ASC)
+WITH (  STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = ON,
+        DROP_EXISTING = OFF, IGNORE_DUP_KEY = OFF, ONLINE = ON,
+        ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [SECONDARY]
+GO
