@@ -1,0 +1,9 @@
+BEGIN TRAN ShareUpd
+    SELECT '1st TranCount', @@TRANCOUNT
+BEGIN TRAN ShareUpd2
+    SELECT '2nd TranCount', @@TRANCOUNT
+COMMIT TRAN ShareUpd2
+    SELECT '3rd TranCount', @@TRANCOUNT
+COMMIT TRAN
+    SELECT 'Last TranCount', @@TRANCOUNT
+GO
